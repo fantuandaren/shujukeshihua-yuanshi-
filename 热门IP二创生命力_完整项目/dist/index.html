@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>热潮之后：热门IP在B站的二创生命力</title>
+  <meta name="description" content="观察曾经走红的热门IP，在近期B站内容中是否仍有二创生命力，以及哪些玩法更能维持播放与互动。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=18" />
+  <link rel="stylesheet" href="morph.css?v=21" />
+  <link rel="stylesheet" href="light.css?v=54" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="vector-meme-bg" aria-hidden="true">
+    <img class="real-bg-meme real-bg-1" src="assets/bg-nailong-1.png?v=52" alt="">
+    <img class="real-bg-meme real-bg-2" src="assets/bg-nailong-2.png?v=52" alt="">
+    <img class="real-bg-meme real-bg-3" src="assets/bg-loopy-1.jpg?v=52" alt="">
+    <img class="real-bg-meme real-bg-4" src="assets/bg-loopy-2.png?v=52" alt="">
+    <img class="real-bg-meme real-bg-5" src="assets/bg-chiikawa-1.jpg?v=52" alt="">
+    <img class="real-bg-meme real-bg-6" src="assets/bg-chiikawa-2.jpg?v=52" alt="">
+  </div>
+  <header class="topbar">
+    <div class="logo"><span class="logo-eye"></span><b>B站IP余热观察</b></div>
+    <nav><a href="#overview">生命力总览</a><a href="#chapter1">近期表现</a></nav>
+    <span class="mock-tag">REAL DATA · 真实采集</span>
+  </header>
+  <main>
+    <section class="hero" id="overview">
+      <div class="hero-copy">
+        <p class="overline">BILIBILI IP SPREAD STUDY</p>
+        <h1><span class="title-main">热潮之后：</span><span class="title-accent">热门IP在B站的二创生命力</span></h1>
+        <div class="question-card"><span>我们想知道</span><strong>这些曾经走红的IP，现在还有人持续二创吗？哪种玩法更能留住播放和互动？</strong></div>
+      </div>
+      <div class="hero-orbit" aria-hidden="true">
+        <div class="orbit ring-one"></div><div class="orbit ring-two"></div>
+        <div class="avatar a1"><img src="assets/bili-1.jpg" alt="奶龙"></div>
+        <div class="avatar a2"><img src="assets/bili-5.jpg" alt="Loopy"></div>
+        <div class="avatar a3"><img src="assets/bili-10.jpg" alt="吉伊卡哇"></div>
+        <div class="center-pulse"><strong>215</strong><span>条有效视频</span></div>
+      </div>
+    </section>
+
+    <section class="morph-section" id="morph">
+      <div class="section-title playful-title"><h2>先认一下本尊，再看看网友都干了什么</h2></div>
+      <div id="morphTabs" class="morph-tabs"></div>
+      <div id="morphTrack" class="morph-track"></div>
+    </section>
+
+    <div class="data-zone" id="dataZone">
+    <section class="filters sticky-panel">
+      <div class="filter-group"><span>选择IP</span><div id="ipChips" class="chips"></div></div>
+      <div class="filter-group"><span>内容来源</span><div id="sourceChips" class="chips small"></div></div>
+      <label>二创类型<select id="typeSelect"><option value="全部">全部类型</option></select></label>
+      <label>时间范围<select id="monthSelect"><option value="全部">2026年5—9月</option></select></label>
+      <button id="resetBtn">重置</button>
+    </section>
+    <div class="chapter-head" id="chapter1"><span>01</span><div><b>先看：热潮过去后，二创还比官方更能打吗？</b></div></div>
+    <section class="chapter-one">
+      <section class="metrics">
+        <article><span>来源对比样本</span><strong id="mCount">0</strong><small>条头部内容记录</small></article>
+        <article><span>播放中位数</span><strong id="mViews">0</strong><small>当前筛选下的典型播放表现</small></article>
+        <article><span>深度互动率</span><strong id="mRate">0%</strong><small>投币＋收藏＋评论 / 播放</small></article>
+        <article><span>点赞率</span><strong id="mUGC">0%</strong><small>点赞 / 播放</small></article>
+      </section>
+      <article class="panel source-gap-panel">
+        <div class="panel-head"><div><p>近期传播表现 · 哑铃图</p><h2>5—9月里，二创是否仍能跑赢官方内容</h2></div><span class="panel-hint">播放量中位数 · 对数横轴 · 标注差距倍数</span></div>
+        <div id="sourceGap" class="chart medium"></div>
+      </article>
+    </section>
+    <section class="evidence-grid">
+      <article class="panel boxplot-panel">
+        <div class="panel-head"><div><p>生命力检验 · 箱线图</p><h2>近期二创普遍还有热度，还是只剩少数爆款？</h2></div><span class="panel-hint">标准1.5×IQR箱线图；圆点为异常值；纵轴为对数刻度</span></div>
+        <div id="sourceBoxplot" class="chart"></div>
+      </article>
+      <article class="panel share-panel">
+        <div class="panel-head"><div><p>近期样本构成 · 100%堆叠条形图</p><h2>最近五个月还能检索到哪些二创类型？</h2></div><span class="panel-hint">展示有效样本构成；缺失保持为空，不补0</span></div>
+        <div id="typeShare" class="chart"></div>
+      </article>
+    </section>
+
+    <div class="chapter-head" id="chapter2"><span>02</span><div><b>再拆：热潮之后，哪种玩法还在续热度？</b></div></div>
+    <section class="mosaic-three">
+      <article class="panel matrix-panel">
+        <div class="panel-head"><div><p>玩法适配 · 热力图</p><h2>每个IP靠哪种二创维持互动</h2></div><span class="panel-hint">按近期有效样本计算</span></div>
+        <div id="typeMatrix" class="chart medium"></div>
+      </article>
+      <article class="panel lollipop-panel">
+        <div class="panel-head"><div><p>余热排名 · 棒棒糖图</p><h2>哪类二创在近期仍有较强播放表现</h2></div><button id="clearType" class="clear-type" type="button">返回全部类型</button></div>
+        <div id="typeLollipop" class="chart tall"></div>
+      </article>
+      <article class="panel scatter-panel">
+        <div class="panel-head"><div><p>持续参与 · 气泡图</p><h2>近期高播放是否还能带来高互动</h2></div><div class="mini-legend"><i></i>点大小代表收藏量</div></div>
+        <div id="scatter" class="chart tall"></div>
+        <p class="chart-note">右上角是“高曝光、高参与”；左上角是“小体量、高黏性”。</p>
+      </article>
+    </section>
+
+    <div class="chapter-head" id="chapter3"><span>03</span><div><b>往后看：留下的是稳定生命力，还是短暂余热？</b></div></div>
+    <section class="mosaic-time">
+      <article class="panel composition-panel">
+        <div class="panel-head"><div><p>余热走势 · 多折线图</p><h2>各类二创在最近五个月如何起伏</h2></div><span class="panel-hint">按实际样本数计算，缺失不补0</span></div>
+        <div id="typeComposition" class="chart tall"></div>
+      </article>
+      <article class="panel timeline-panel">
+        <div class="panel-head"><div><p>生命力变化 · 双线图</p><h2>二创相对官方的优势能否持续</h2></div><div class="metric-switch"><button class="active" data-metric="views">平均播放量</button><button data-metric="rate">深度互动率</button></div></div>
+        <div id="sourceTrend" class="chart"></div>
+      </article>
+    </section>
+
+    <div class="chapter-head" id="chapter4"><span>04</span><div><b>收个尾：热潮之后，这个IP靠什么继续被看见？</b></div></div>
+    <section class="deep-findings" aria-labelledby="deepFindingsTitle">
+      <div class="deep-findings-head">
+        <div><p>全量样本结论</p><h2 id="deepFindingsTitle">215条视频里，真正留下来的不只是播放量</h2></div>
+        <strong>传播力看播放，参与力看投币与收藏</strong>
+      </div>
+      <div class="deep-findings-grid">
+        <article class="finding-card finding-main">
+          <span>总判断</span>
+          <h3>三个IP走出了三条不同的“续热”路线</h3>
+          <p>奶龙靠AI内容持续扩大曝光，吉伊卡哇靠混剪形成大规模传播，Loopy则依靠阶段性热点维持长尾关注。</p>
+        </article>
+        <article class="finding-card finding-nailong">
+          <span>奶龙</span><b>二创头部播放是官方的 13.2 倍</b>
+          <p><em>AI生成</em>负责稳定曝光，<em>表情包/梗图</em>负责带动投币和收藏。</p>
+        </article>
+        <article class="finding-card finding-loopy">
+          <span>Loopy</span><b>热点过去后，仍会出现阶段性回升</b>
+          <p>8月二创头部平均播放升至约32.7万，AI内容更容易获得播放，配音内容更容易形成参与。</p>
+        </article>
+        <article class="finding-card finding-chiikawa">
+          <span>吉伊卡哇</span><b>二创头部播放是官方的 110 倍</b>
+          <p><em>混剪/鬼畜</em>负责破圈，<em>配音改编</em>聚集互动意愿更强的受众。</p>
+        </article>
+        <article class="finding-card finding-rule">
+          <span>跨IP规律</span><b>高播放和高互动是两种能力</b>
+          <p>AI生成更擅长扩大曝光；表情包和配音的播放规模较小，但更容易促成收藏与投币。</p>
+        </article>
+        <article class="finding-card finding-time">
+          <span>时间变化</span><b>播放回落后，参与度仍可能上升</b>
+          <p>7月平均播放最高，9月核心互动率最高，说明后期留下来的观众参与意愿更强。</p>
+        </article>
+      </div>
+    </section>
+    <aside class="panel insight-panel conclusion-panel">
+      <div class="panel-head"><div><p>近期生命力判断</p><h2>当前筛选说明了什么</h2></div><span class="live-dot">LIVE</span></div>
+      <div id="insightLead" class="insight-lead"></div>
+      <div id="insightList" class="insight-list"></div>
+      <div class="hypothesis"><span>需要进一步验证</span><p id="hypothesisText"></p></div>
+    </aside>
+
+    </div>
+  </main>
+  <footer><strong>热潮之后：热门IP在B站的二创生命力</strong><span>观察期：2026年5—9月 · 三个IP均为真实采集 · 空白位置不补0</span></footer>
+  <div id="tooltip" class="tooltip"></div>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="real-data.js?v=60"></script>
+  <script src="app.js?v=60"></script>
+</body>
+</html>
